@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  communitylab:
+    build: .
+    container_name: communitylab-app
+    restart: always
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./oci_local_storage:/app/oci_local_storage
